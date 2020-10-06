@@ -1,189 +1,183 @@
-const string = '.skin *{box-sizing: border-box;margin: 0;padding: 0;}\n' +
-'.skin *::before,.skin *::after{box-sizing: border-box;}\n'+
-
-'.skin{\n' +
-' background: #ffe600;\n' +
-'    min-height: 100vh;\n' +
-'    position: relative;\n' +
-'}\n' +
-'.nose{\n' +
-'    border: 10px solid black;\n' +
-'    border-color: black transparent transparent;\n' +
-'    border-bottom: nome;\n' +
-'    width: 0px;\n' +
-'    height: 0px;\n' +
-'    position: relative;\n' +
-'    left: 50%;\n' +
-'    top: 145px;\n' +
-'    margin-left:-10px;\n' +
-'    z-index: 10;\n' +
-'}\n' +
-'@keyframes wave{\n' +
-'    0%{\n' +
-'      transform: rotate(0deg);    \n' +
-'    }\n' +
-'    33%{\n' +
-'      transform: rotate(5deg);    \n' +
-'    }\n' +
-'    66%{\n' +
-'      transform: rotate(-5deg);    \n' +
-'    }\n' +
-'    100%{\n' +
-'      transform: rotate(0deg);    \n' +
-'    }\n' +
-'  \n' +
-'  }\n' +
-'  .nose:hover{\n' +
-'    transform-origin: center bottom;\n' +
-'    animation: wave 300ms infinite linear;\n' +
-'  }\n' +
-'  \n' +
-'  .yuan{\n' +
-'    position: absolute;\n' +
-'    width: 20px;\n' +
-'    height: 6px;\n' +
-'    top: -16px;\n' +
-'    left: -10px;\n' +
-'    border-radius: 10px 10px 0 0;\n' +
-'    background: black;\n' +
-'  }\n' +
-'  \n' +
-'  .eye {\n' +
-'    border: 2px solid #000;\n' +
-'    width: 64px;\n' +
-'    height: 64px;\n' +
-'    position: absolute;\n' +
-'    left: 50%;\n' +
-'    top: 100px;\n' +
-'    margin-left: -32px;\n' +
-'    background: #2e2e2e;\n' +
-'    border-radius: 50%;\n' +
-'  }\n' +
-'  .eye::before{\n' +
-'    content: \'\';\n' +
-'    display: block;\n' +
-'    border: 3px solid #000;\n' +
-'    width: 30px;\n' +
-'    height: 30px;\n' +
-'    background: #fff;\n' +
-'    border-radius: 50%;\n' +
-'    position: relative;\n' +
-'    left: 4px;\n' +
-'    top: 2px;\n' +
-'  }\n' +
-'  .eye.left{\n' +
-'    transform: translateX(-100px);\n' +
-'  }\n' +
-'  .eye.right{\n' +
-'    transform: translateX(100px);\n' +
-'  }\n' +
-'  .mouth{\n' +
-'    width: 200px;\n' +
-'    height: 200px;\n' +
-'    position: absolute;\n' +
-'    left: 50%;\n' +
-'    top: 170px;\n' +
-'    margin-left: -100px;\n' +
-'  }\n' +
-'  .mouth .up{\n' +
-'    position: relative;\n' +
-'    top: -20px;\n' +
-'    z-index: 1;\n' +
-'  }\n' +
-'  .mouth .up .lip{\n' +
-'    border: 3px solid black;\n' +
-'    height: 30px;\n' +
-'    width: 100px;\n' +
-'    background: #ffe600;\n' +
-'    border-top-color: transparent;\n' +
-'    border-right-color: transparent;\n' +
-'    position: relative;\n' +
-'    position: absolute;\n' +
-'    left: 50%;\n' +
-'    margin-left: -50px;\n' +
-'  }\n' +
-'  .mouth .up .lip.left{\n' +
-'    border-radius: 0 0 0 50px;\n' +
-'    transform: rotate(-15deg) translateX(-53px);\n' +
-'  }\n' +
-'  .mouth .up .lip.right{\n' +
-'    border-radius: 0 0 50px 0px;\n' +
-'    transform: rotate(15deg) translateX(53px);\n' +
-'  }\n' +
-'  .mouth .up .lip::before{\n' +
-'    content: \'\';\n' +
-'    display: block;\n' +
-'    width: 7px;\n' +
-'    height: 30px;\n' +
-'    position: absolute;\n' +
-'    bottom: 0;\n' +
-'    background: #ffe600;\n' +
-'  }\n' +
-'  .mouth .up .lip.left::before{\n' +
-'    right: -6px;\n' +
-'  \n' +
-'  }\n' +
-'  .mouth .up .lip.right::before{\n' +
-'    left: -6px;\n' +
-'  }\n' +
-'  .mouth .down{\n' +
-'    height: 180px;\n' +
-'    position: absolute;\n' +
-'    top: 5px;\n' +
-'    width: 100%;\n' +
-'    overflow: hidden;\n' +
-'  }\n' +
-'  .mouth .down .yuan1{\n' +
-'    border: 3px solid black;\n' +
-'    width: 150px;\n' +
-'    height: 1000px;\n' +
-'    position: absolute;\n' +
-'    bottom: 0;\n' +
-'    left: 50%;\n' +
-'    margin-left: -75px;\n' +
-'    border-radius: 75px/300px;\n' +
-'    background: #9b000a;\n' +
-'    overflow: hidden;\n' +
-'  }\n' +
-'  .mouth .down .yuan1 .yuan2{\n' +
-'    width: 200px;\n' +
-'    height: 300px;\n' +
-'    background: #ff485f;\n' +
-'    position: absolute;\n' +
-'    bottom: -155px;\n' +
-'    left: 50%;\n' +
-'    margin-left: -100px;\n' +
-'    border-radius: 100px;\n' +
-'  \n' +
-'  }\n' +
-'  .face{\n' +
-'    border: 3px solid black;\n' +
-'    position: absolute;\n' +
-'    left: 50%;\n' +
-'    width: 88px;\n' +
-'    height: 88px;\n' +
-'    top: 200px;\n' +
-'    margin-left: -44px;\n' +
-'    z-index: 3;\n' +
-'  }\n' +
-'  .face > img{\n' +
-'    position: absolute;\n' +
-'    top: 50%;\n' +
-'    left: 50%;\n' +
-'  }\n' +
-'  .face.left{\n' +
-'    transform: translateX(-180px);\n' +
-'    background: #ff0000;\n' +
-'    border-radius: 50%;\n' +
-'  }\n' +
-'  .face.left > img{\n' +
-'    transform: rotateY(180deg);\n' +
-'    transform-origin: 0 0;\n' +
-'  }\n' +
-'  .face.right{\n' +
-'    transform: translateX(180px);\n' +
-'    background: #ff0000;\n' +
-'    border-radius: 50%;\n' +
-'  }'
-
+const string = `.skin *{box-sizing: border-box;margin: 0;padding: 0;}
+.skin *::before, .skin *::after{box-sizing: border-box;}
+.skin{
+  background: #ffe600;
+  min-height: 50vh;
+  position: relative;
+}
+.nose{
+  border: 10px solid black;
+  border-color: black transparent transparent;
+  border-bottom: none;
+  width: 0px;
+  height: 0px;
+  position: relative;
+  left: 50%;
+  top: 145px;
+  margin-left: -10px;
+  z-index: 10;
+}
+@keyframes wave{
+  0%{
+    transform: rotate(0deg);
+}
+  33%{
+    transform: rotate(5deg);
+}
+  66%{
+    transform: rotate(-5deg);
+}
+  100%{
+    transform: rotate(0deg);
+}
+}
+.nose:hover{
+  transform-origin: center bottom;
+  animation: wave 300ms infinite linear;
+}
+.yuan{
+  position: absolute;
+  width: 20px;
+  height: 6px;
+  top: -16px;
+  left: -10px;
+  border-radius: 10px 10px 0 0;
+  background: black;
+}
+.eye {
+  border: 2px solid #000;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  margin-left: -32px;
+  background: #2e2e2e;
+  border-radius: 50%;
+}
+.eye::before{
+  content: '';
+  display: block;
+  border: 3px solid #000;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  left: 4px;
+  top: 2px;
+}
+.eye.left{
+  transform: translateX(-100px);
+}
+.eye.right{
+  transform: translateX(100px);
+}
+.mouth{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 170px;
+  margin-left: -100px;
+}
+.mouth .up{
+  position: relative;
+  top: -20px;
+  z-index: 1;
+}
+.mouth .up .lip{
+  border: 3px solid black;
+  height: 30px;
+  width: 100px;
+  background: #ffe600;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+}
+.mouth .up .lip.left{
+  border-radius: 0 0 0 50px;
+  transform: rotate(-15deg) translateX(-53px);
+}
+.mouth .up .lip.right{
+  border-radius: 0 0 50px 0px;
+  transform: rotate(15deg) translateX(53px);
+}
+.mouth .up .lip::before{
+  content: '';
+  display: block;
+  width: 7px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  background: #ffe600;
+}
+.mouth .up .lip.left::before{
+  right: -6px;
+}
+.mouth .up .lip.right::before{
+  left: -6px;
+}
+.mouth .down{
+  height: 180px;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+.mouth .down .yuan1{
+  border: 3px solid black;
+  width: 150px;
+  height: 1000px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -75px;
+  border-radius: 75px/300px;
+  background: #9b000a;
+  overflow: hidden;
+}
+.mouth .down .yuan1 .yuan2{
+  width: 200px;
+  height: 300px;
+  background: #ff485f;
+  position: absolute;
+  bottom: -155px;
+  left: 50%;
+  margin-left: -100px;
+  border-radius: 100px;
+}
+.face{
+  position: absolute;
+  left: 50%;
+  border: 3px solid black;
+  width: 88px;
+  height: 88px;
+  top: 200px;
+  margin-left: -44px;
+  z-index: 3;
+}
+.face > img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.face.left{
+  transform: translateX(-180px);
+  background: #ff0000;
+  border-radius: 50%;
+}
+.face.left > img{
+  transform: rotateY(180deg);
+  transform-origin: 0 0;
+}
+.face.right{
+  transform: translateX(180px);
+  background: #ff0000;
+  border-radius: 50%;
+}
+`
 export default string;
